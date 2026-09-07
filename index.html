@@ -67,6 +67,10 @@
             text-align: center;
             color: #1a1a1a;
         }
+        .reto-ia h3{
+            color: #1a1a1a;
+            margin-top: 25px;
+        }
         .reto-ia ul{
             padding-left: 20px;
         }
@@ -76,6 +80,20 @@
         .reto-ia a{
             color: #1a1a1a;
             font-weight: bold;
+        }
+        .capturas-container{
+            text-align: center;
+            margin-top: 15px;
+        }
+        .capturas-container img{
+            width: 100%;
+            max-width: 500px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+        }
+        .aspectos-mejora{
+            padding-left: 20px;
         }
         .video-container{
             margin-top: 20px;
@@ -97,14 +115,31 @@
 
     <div class="reto-ia">
         <h2>Reto IA</h2>
-        <ul>
-            <li>Sitio original: <a href="https://supersonidos.com.sv/" target="_blank">https://supersonidos.com.sv/</a></li>
-            <li>Resultado 1 (instrucción genérica): <a href="#" target="_blank">[Enlace a GitHub Pages]</a></li>
-            <li>Resultado 2 (instrucción elaborada): <a href="#" target="_blank">[Enlace a GitHub Pages]</a></li>
+
+        <p><strong>Sitio web seleccionado:</strong> <a href="https://supersonidos.com.sv/" target="_blank">https://supersonidos.com.sv/</a></p>
+
+        <h3>Capturas de la página de inicio actual</h3>
+        <div class="capturas-container">
+            <!-- Reemplaza src con la ruta de tu imagen, ej: capturas/sitio-original-1.png -->
+            <img src="fotos/Captura de pantalla 2026-09-07 160917.png" alt="Captura 1 del sitio original">
+            <img src="fotos/Captura de pantalla 2026-09-07 161745.png" alt="Captura 2 del sitio original">
+        </div>
+
+        <h3>Aspectos susceptibles de mejora</h3>
+        <ul class="aspectos-mejora">
+            <li>Se ve como una plantilla genérica, sin personalidad propia</li>
+            <li>La navegación para encontrar un producto específico es complicada</li>
+            <li>Demasiados logos de marcas juntos, sin orden</li>
         </ul>
 
+        <h3>Resultados</h3>
+        <ul>
+            <li><a href="guia1/web_sin_contexto.html">Resultado 1 (instrucción genérica)</a></li>
+            <li><a href="guia1/web_con_contexto.html">Resultado 2 (instrucción elaborada)</a></li>
+        </ul>
+
+        <h3>Video explicativo</h3>
         <div class="video-container">
-            <p><strong>Video explicativo:</strong></p>
             <!-- Reemplaza el src con el enlace de embed de tu video de YouTube -->
             <iframe width="100%" height="315" src="https://www.youtube.com/embed/TU_VIDEO_ID" title="Video explicativo Reto IA" frameborder="0" allowfullscreen></iframe>
         </div>
