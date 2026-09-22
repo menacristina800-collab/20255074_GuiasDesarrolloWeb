@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar Sesión - Supersonidos El Salvador</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Barra Promocional -->
+  <div class="promo-bar">
+    📞 PBX: (503) 2221-1220 | ✉️ ventas@supersonidos.com.sv | San Salvador, El Salvador
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">SUPER<span>SONIDOS</span></a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="quienes-somos.html" class="nav-link">Quiénes Somos</a>
+        <a href="index.html#catalogo" class="nav-link">Catálogo</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+
+      <div>
+        <a href="login.html" class="btn-primary">Mi Cuenta</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido Real de Login OpenCart -->
+  <main style="min-height: 70vh; display: flex; align-items: center; justify-content: center; padding: 64px 16px;">
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; max-width: 960px; width: 100%;">
+      
+      <!-- Iniciar Sesión (Formulario Original) -->
+      <div style="background-color: var(--color-carbon); border: 1px solid var(--color-iron); border-radius: 4px; padding: 32px;">
+        <h2 style="font-size: 24px; font-weight: 500; margin-bottom: 8px; letter-spacing: -0.42px;">Clientes Registrados</h2>
+        <p style="color: var(--color-fog); font-size: 14px; margin-bottom: 24px;">Por favor ingresa con tu cuenta registrada.</p>
+
+        <form style="display: flex; flex-direction: column; gap: 16px;">
+          <div>
+            <label style="display: block; font-size: 14px; color: var(--color-fog); margin-bottom: 6px;">Dirección de E-Mail</label>
+            <input type="email" placeholder="E-Mail" style="width: 100%; background-color: var(--color-carbon); border: 1px solid var(--color-iron); border-radius: 4px; padding: 12px 16px; color: var(--color-platinum); font-size: 14px; outline: none;" required />
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 14px; color: var(--color-fog); margin-bottom: 6px;">Contraseña</label>
+            <input type="password" placeholder="Contraseña" style="width: 100%; background-color: var(--color-carbon); border: 1px solid var(--color-iron); border-radius: 4px; padding: 12px 16px; color: var(--color-platinum); font-size: 14px; outline: none;" required />
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 14px;">
+            <a href="#">¿Olvidó su contraseña?</a>
+          </div>
+
+          <button type="submit" class="btn-primary" style="margin-top: 8px; width: 100%;">
+            Iniciar Sesión
+          </button>
+        </form>
+      </div>
+
+      <!-- Nuevo Cliente (Opciones de Registro OpenCart) -->
+      <div style="background-color: var(--color-graphite); border: 1px solid var(--color-iron); border-radius: 4px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span style="color: var(--color-voltage-yellow); text-transform: uppercase; font-size: 12px; letter-spacing: 0.071em; font-weight: 600;">¿Nuevo Cliente?</span>
+          <h3 style="font-size: 22px; font-weight: 400; margin: 12px 0; letter-spacing: -0.3px;">Registrar una cuenta</h3>
+          <p style="color: var(--color-fog); font-size: 14px; line-height: 1.5; margin-bottom: 20px;">
+            Al crear una cuenta en Supersonidos podrá realizar sus compras rápidamente, revisar el estado de sus pedidos y dar seguimiento a sus operaciones anteriores.
+          </p>
+        </div>
+
+        <a href="#" class="btn-outline" style="text-align: center;">
+          Continuar con el Registro
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div>
+        <h4 class="footer-title">Supersonidos El Salvador</h4>
+        <p style="line-height: 1.5; font-size: 13px;">Líderes en venta de instrumentos musicales, equipos de audio profesional e iluminación en El Salvador.</p>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Información</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+          <li><a href="login.html">Mi Cuenta</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Servicio al Cliente</h4>
+        <ul class="footer-links">
+          <li><a href="#">Garantía y Devoluciones</a></li>
+          <li><a href="#">Servicio Técnico</a></li>
+          <li><a href="#">Formas de Pago</a></li>
+        </ul>
+      </div>
+
+      <div id="contacto">
+        <h4 class="footer-title">Contacto</h4>
+        <p style="line-height: 1.5; font-size: 13px;">
+          📍 Alameda Roosevelt, San Salvador<br/>
+          📞 (503) 2221-1220<br/>
+          ✉️ ventas@supersonidos.com.sv
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Supersonidos El Salvador. Todos los derechos reservados.
+    </div>
+  </footer>
+
+</body>
+</html>

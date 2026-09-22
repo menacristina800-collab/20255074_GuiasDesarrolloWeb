@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SUPERSONIDOS - Tienda de Instrumentos Musicales y Audio en El Salvador</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Barra Promocional Original -->
+  <div class="promo-bar">
+    📞 PBX: (503) 2221-1220 | ✉️ ventas@supersonidos.com.sv | San Salvador, El Salvador
+  </div>
+
+  <!-- Header con Menú Unificado -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">SUPER<span>SONIDOS</span></a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link active">Inicio</a>
+        <a href="quienes-somos.html" class="nav-link">Quiénes Somos</a>
+        <a href="#catalogo" class="nav-link">Catálogo</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <a href="login.html" class="btn-primary">Mi Cuenta</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner Principal -->
+  <section style="background: linear-gradient(rgba(0,0,0,0.6), rgba(18,18,20,1)), url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1600') center/cover no-repeat; padding: 100px 32px; text-align: left;">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <span style="color: var(--color-voltage-yellow); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.071em;">Sistemas de Audio e Instrumentos</span>
+      <h1 style="font-size: 48px; font-weight: 400; margin: 16px 0; letter-spacing: -0.81px; max-width: 700px;">
+        Audio e instrumentos profesionales
+      </h1>
+      <p style="color: var(--color-fog); font-size: 18px; margin-bottom: 32px; max-width: 600px;">
+        Distribuidor autorizado con garantía, servicio técnico y respaldo garantizado.
+      </p>
+      <a href="#catalogo" class="btn-primary" style="padding: 14px 28px;">Ver Catálogo Completo</a>
+    </div>
+  </section>
+
+  <!-- Categorías Principales (Estructura real de Supersonidos) -->
+  <section id="catalogo" style="max-width: 1280px; margin: 64px auto; padding: 0 32px;">
+    <h2 style="font-size: 28px; font-weight: 400; margin-bottom: 32px; letter-spacing: -0.42px;">Categorías de Productos</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+      <div style="background: var(--color-carbon); border: 1px solid var(--color-iron); padding: 24px; border-radius: 4px;">
+        <h3 style="font-size: 18px; font-weight: 500; margin-bottom: 8px;">Guitarras y Bajos</h3>
+        <p style="color: var(--color-fog); font-size: 14px; margin-bottom: 16px;">Eléctricas, acústicas, electroacústicas, bajos y amplificadores.</p>
+        <a href="#" style="font-size: 14px; font-weight: 500;">Explorar →</a>
+      </div>
+
+      <div style="background: var(--color-carbon); border: 1px solid var(--color-iron); padding: 24px; border-radius: 4px;">
+        <h3 style="font-size: 18px; font-weight: 500; margin-bottom: 8px;">Baterías y Percusión</h3>
+        <p style="color: var(--color-fog); font-size: 14px; margin-bottom: 16px;">Acústicas, electrónicas, platillos, baquetas y accesorios.</p>
+        <a href="#" style="font-size: 14px; font-weight: 500;">Explorar →</a>
+      </div>
+
+      <div style="background: var(--color-carbon); border: 1px solid var(--color-iron); padding: 24px; border-radius: 4px;">
+        <h3 style="font-size: 18px; font-weight: 500; margin-bottom: 8px;">Teclados y Pianos</h3>
+        <p style="color: var(--color-fog); font-size: 14px; margin-bottom: 16px;">Sintetizadores, pianos digitales, controladores MIDI y órganos.</p>
+        <a href="#" style="font-size: 14px; font-weight: 500;">Explorar →</a>
+      </div>
+
+      <div style="background: var(--color-carbon); border: 1px solid var(--color-iron); padding: 24px; border-radius: 4px;">
+        <h3 style="font-size: 18px; font-weight: 500; margin-bottom: 8px;">Audio Profesional y Grabación</h3>
+        <p style="color: var(--color-fog); font-size: 14px; margin-bottom: 16px;">Consolas, parlantes, micrófonos, monitores e interfaces.</p>
+        <a href="#" style="font-size: 14px; font-weight: 500;">Explorar →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marcas Destacadas -->
+  <section style="max-width: 1280px; margin: 64px auto; padding: 0 32px;">
+    <h2 style="font-size: 24px; font-weight: 400; margin-bottom: 24px;">Marcas que Representamos</h2>
+    <div style="display: flex; gap: 24px; flex-wrap: wrap; color: var(--color-fog); font-weight: 600;">
+      <span style="background: var(--color-graphite); padding: 12px 24px; border-radius: 4px; border: 1px solid var(--color-iron);">YAMAHA</span>
+      <span style="background: var(--color-graphite); padding: 12px 24px; border-radius: 4px; border: 1px solid var(--color-iron);">FENDER</span>
+      <span style="background: var(--color-graphite); padding: 12px 24px; border-radius: 4px; border: 1px solid var(--color-iron);">SHURE</span>
+      <span style="background: var(--color-graphite); padding: 12px 24px; border-radius: 4px; border: 1px solid var(--color-iron);">IBAÑEZ</span>
+      <span style="background: var(--color-graphite); padding: 12px 24px; border-radius: 4px; border: 1px solid var(--color-iron);">BEHRINGER</span>
+      <span style="background: var(--color-graphite); padding: 12px 24px; border-radius: 4px; border: 1px solid var(--color-iron);">MACKIE</span>
+    </div>
+  </section>
+
+  <!-- Footer Original -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div>
+        <h4 class="footer-title">Supersonidos El Salvador</h4>
+        <p style="line-height: 1.5; font-size: 13px;">Líderes en venta de instrumentos musicales, equipos de audio profesional e iluminación en El Salvador.</p>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Información</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+          <li><a href="login.html">Mi Cuenta</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Servicio al Cliente</h4>
+        <ul class="footer-links">
+          <li><a href="#">Garantía y Devoluciones</a></li>
+          <li><a href="#">Servicio Técnico</a></li>
+          <li><a href="#">Formas de Pago</a></li>
+        </ul>
+      </div>
+
+      <div id="contacto">
+        <h4 class="footer-title">Contacto</h4>
+        <p style="line-height: 1.5; font-size: 13px;">
+          📍 Alameda Roosevelt, San Salvador<br/>
+          📞 (503) 2221-1220<br/>
+          ✉️ ventas@supersonidos.com.sv
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Supersonidos El Salvador. Todos los derechos reservados.
+    </div>
+  </footer>
+
+</body>
+</html>

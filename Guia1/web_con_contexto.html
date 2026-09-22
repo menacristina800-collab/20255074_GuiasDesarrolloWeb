@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperSonidos Music | Instrumentos y Audio Profesional en El Salvador</title>
+    <!-- Tipografías de Google Fonts: Montserrat (Títulos) y Inter (Texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos6.css">
+</head>
+<body>
+
+    <!-- BARRA SUPERIOR E INFORMACIÓN -->
+    <div class="top-bar">
+        <span>Envíos a todo El Salvador | Asesoría técnica personalizada</span>
+        <span>Atención al cliente: +503 2200-0000</span>
+    </div>
+
+    <!-- ENCABEZADO Y NAVEGACIÓN FIJA -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="logo">SuperSonidos<span>Music</span></a>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar guitarras, micrófonos, consolas...">
+                <button type="button">Buscar</button>
+            </div>
+
+            <div class="header-actions">
+                <a href="#" class="action-btn">Mi Cuenta</a>
+                <a href="#" class="action-btn cart-btn">Carrito (0)</a>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Guitarras</a></li>
+                <li><a href="#">Bajos</a></li>
+                <li><a href="#">Baterías</a></li>
+                <li><a href="#">Pianos y Teclados</a></li>
+                <li><a href="#">Consolas y Dj</a></li>
+                <li><a href="#">Micrófonos</a></li>
+                <li><a href="#">Bocinas y Amplis</a></li>
+                <li><a href="#" class="highlight">Ofertas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- BANNER PRINCIPAL (HERO) -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <span class="badge">OFERTA EXCLUSIVA</span>
+            <h1>GRAN VENTA DE TEMPORADA</h1>
+            <p>Hasta 35% de descuento en consolas de mezcla y equipo de grabación profesional.</p>
+            <a href="#catalogo" class="btn btn-primary">Comprar ahora</a>
+        </div>
+    </section>
+
+    <!-- CATEGORÍAS DESTACADAS -->
+    <section class="section-container">
+        <h2 class="section-title">Categorías Destacadas</h2>
+        <div class="categories-grid">
+            <div class="category-card" style="background-image: linear-gradient(rgba(10,37,64,0.6), rgba(10,37,64,0.6)), url('https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=600&auto=format&fit=crop');">
+                <h3>Pianos y Sintetizadores</h3>
+                <a href="#" class="btn btn-secondary">Ver Categoría</a>
+            </div>
+            <div class="category-card" style="background-image: linear-gradient(rgba(10,37,64,0.6), rgba(10,37,64,0.6)), url('https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?q=80&w=600&auto=format&fit=crop');">
+                <h3>Baterías y Percusión</h3>
+                <a href="#" class="btn btn-secondary">Ver Categoría</a>
+            </div>
+            <div class="category-card" style="background-image: linear-gradient(rgba(10,37,64,0.6), rgba(10,37,64,0.6)), url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=600&auto=format&fit=crop');">
+                <h3>Audio y Grabación</h3>
+                <a href="#" class="btn btn-secondary">Ver Categoría</a>
+            </div>
+            <div class="category-card" style="background-image: linear-gradient(rgba(10,37,64,0.6), rgba(10,37,64,0.6)), url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=600&auto=format&fit=crop');">
+                <h3>Guitarras Eléctricas</h3>
+                <a href="#" class="btn btn-secondary">Ver Categoría</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARCAS QUE AMAMOS -->
+    <section class="brands-section">
+        <div class="section-container">
+            <h2 class="section-title">Marcas que Amamos</h2>
+            <div class="brands-row">
+                <div class="brand-box">YAMAHA</div>
+                <div class="brand-box">FENDER</div>
+                <div class="brand-box">SHURE</div>
+                <div class="brand-box">BEHRINGER</div>
+                <div class="brand-box">ROLAND</div>
+                <div class="brand-box">GIBSON</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATÁLOGO CON SISTEMA DE FILTROS -->
+    <section id="catalogo" class="section-container catalog-layout">
+        
+        <!-- BARRA LATERAL DE FILTROS -->
+        <aside class="filters-sidebar">
+            <h3>Filtrar Productos</h3>
+            
+            <div class="filter-group">
+                <h4>Categorías</h4>
+                <label><input type="checkbox" checked> Guitarras y Bajos</label>
+                <label><input type="checkbox"> Audio Profesional</label>
+                <label><input type="checkbox"> Microfonía</label>
+                <label><input type="checkbox"> Teclados</label>
+            </div>
+
+            <div class="filter-group">
+                <h4>Marca</h4>
+                <label><input type="checkbox"> Fender</label>
+                <label><input type="checkbox"> Shure</label>
+                <label><input type="checkbox"> Yamaha</label>
+                <label><input type="checkbox"> Behringer</label>
+            </div>
+
+            <div class="filter-group">
+                <h4>Precio ($USD)</h4>
+                <div class="price-inputs">
+                    <input type="number" placeholder="Min" value="0">
+                    <span>-</span>
+                    <input type="number" placeholder="Max" value="1000">
+                </div>
+            </div>
+
+            <button class="btn btn-primary btn-full">Aplicar Filtros</button>
+        </aside>
+
+        <!-- CUADRÍCULA DE PRODUCTOS -->
+        <main class="products-container">
+            <div class="products-header">
+                <h2>Catálogo de Productos</h2>
+                <span class="results-count">Mostrando 6 productos</span>
+            </div>
+
+            <div class="products-grid">
+                
+                <!-- Tarjeta 1 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <span class="badge-discount">-15%</span>
+                        <img src="https://images.unsplash.com/photo-1564186763535-ebb21ef5277f?q=80&w=400&auto=format&fit=crop" alt="Guitarra Eléctrica">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-brand">Fender</span>
+                        <h3 class="product-title">Guitarra Eléctrica Player Stratocaster</h3>
+                        <div class="product-price">
+                            <span class="current-price">$679.00</span>
+                            <span class="old-price">$799.00</span>
+                        </div>
+                        <button class="btn btn-primary btn-full">Comprar</button>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 2 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=400&auto=format&fit=crop" alt="Micrófono Dinámico">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-brand">Shure</span>
+                        <h3 class="product-title">Micrófono Dinámico Vocal SM58</h3>
+                        <div class="product-price">
+                            <span class="current-price">$99.00</span>
+                        </div>
+                        <button class="btn btn-primary btn-full">Comprar</button>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 3 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <span class="badge-discount">OFERTA</span>
+                        <img src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?q=80&w=400&auto=format&fit=crop" alt="Consola de Audio">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-brand">Behringer</span>
+                        <h3 class="product-title">Consola Analógica Xenyx X1204USB</h3>
+                        <div class="product-price">
+                            <span class="current-price">$215.00</span>
+                            <span class="old-price">$250.00</span>
+                        </div>
+                        <button class="btn btn-primary btn-full">Comprar</button>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 4 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=400&auto=format&fit=crop" alt="Teclado Sintetizador">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-brand">Yamaha</span>
+                        <h3 class="product-title">Teclado Sintetizador 61 Teclas P-45</h3>
+                        <div class="product-price">
+                            <span class="current-price">$499.00</span>
+                        </div>
+                        <button class="btn btn-primary btn-full">Comprar</button>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 5 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=400&auto=format&fit=crop" alt="Bocina Amplificada">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-brand">JBL Professional</span>
+                        <h3 class="product-title">Bocina Amplificada 12" EON712</h3>
+                        <div class="product-price">
+                            <span class="current-price">$549.00</span>
+                        </div>
+                        <button class="btn btn-primary btn-full">Comprar</button>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 6 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02?q=80&w=400&auto=format&fit=crop" alt="Audífonos de Estudio">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-brand">Audio-Technica</span>
+                        <h3 class="product-title">Audífonos de Monitor Monitores ATH-M50x</h3>
+                        <div class="product-price">
+                            <span class="current-price">$149.00</span>
+                        </div>
+                        <button class="btn btn-primary btn-full">Comprar</button>
+                    </div>
+                </article>
+
+            </div>
+        </main>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>SuperSonidos Music</h3>
+                <p>Tu tienda de confianza en El Salvador para instrumentos musicales, audio profesional y asesoría de alto nivel.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Métodos de Pago</a></li>
+                    <li><a href="#">Políticas de Envío</a></li>
+                    <li><a href="#">Garantía y Soporte</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <p>San Salvador, El Salvador</p>
+                <p>Email: ventas@supersonidos.com.sv</p>
+                <p>Tel: +503 2200-0000</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SuperSonidos Music. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- BOTÓN DE CHAT CONTROLADO (NO INTERFIERE CON EL CONTENIDO) -->
+    <a href="#" class="whatsapp-widget" title="Chatea con nosotros">
+        <span>WhatsApp</span>
+    </a>
+
+</body>
+</html>
