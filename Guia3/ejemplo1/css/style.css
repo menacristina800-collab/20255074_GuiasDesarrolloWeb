@@ -1,0 +1,13 @@
+:root {
+--color-texto: #342e29;
+--color-fondo: #f5efe6;
+--color-principal: #293e36;
+--color-acento: #93472f;
+--color-superficie: #ffffff;
+--color-contraste: #ead1ad;
+--color-borde: #ded3c4;
+--color-fondo-secundario: #eadfce;
+--color-capa-inicial: rgba(25, 35, 29, 0.85);
+--color-capa-final: rgba(25, 35, 29, 0.65);
+--color-sombra: rgba(52, 46, 41, 0.10);
+}
