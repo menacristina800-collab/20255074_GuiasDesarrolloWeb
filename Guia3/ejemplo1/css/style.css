@@ -167,20 +167,20 @@ justify-content: center;
 }
 
 /* 16a) ¿Cuántas filas intenta formar Flexbox?
-   Una sola fila.
+Una sola fila.
 
-   16b) ¿Qué ocurre con el ancho de las tarjetas?
-   Se reducen hasta caber todas en la misma fila.
+16b) ¿Qué ocurre con el ancho de las tarjetas?
+Se reducen hasta caber todas en la misma fila.
 
-   16c) ¿El contenido permanece cómodo de leer?
-   No, ya que el texto se parte en líneas cortas y las tarjetas quedan apretadas. 
+16c) ¿El contenido permanece cómodo de leer?
+No, ya que el texto se parte en líneas cortas y las tarjetas quedan apretadas. 
    
-   17) Qué cambió:
-   Cuando las tarjetas no caben, pasan a una nueva fila y se distribuyen en varias filas. 
+17) Qué cambió:
+Cuando las tarjetas no caben, pasan a una nueva fila y se distribuyen en varias filas. 
    
-   19) Diferencia entre gap y relleno interior:
-   - Gap es el espacio que se crea entre las tarjetas.
-   - El relleno es el espacio interior de una tarjeta, entre su borde y su contenido. Está dentro de la caja y lleva el fondo de la tarjeta. */
+19) Diferencia entre gap y relleno interior:
+- Gap es el espacio que se crea entre las tarjetas.
+- El relleno es el espacio interior de una tarjeta, entre su borde y su contenido. Está dentro de la caja y lleva el fondo de la tarjeta. */
 
 .maravilla {
   flex: 1 1 300px;
@@ -195,18 +195,20 @@ justify-content: center;
 }
 
 /* 20a) ¿Por qué crece más que las tarjetas de una fila completa?
-   Porque el espacio que sobra en la fila se reparte entre las tarjetas que hay en ella. 
-   Como en la última fila hay menos tarjetas, a cada una le toca más espacio y se vuelve más ancha.
+Porque el espacio que sobra en la fila se reparte entre las tarjetas que hay en ella. 
+Como en la última fila hay menos tarjetas, a cada una le toca más espacio y se vuelve más ancha.
 
-   20b) ¿Qué valor de flex permite ese crecimiento?
-   El primer valor de flex: 1 1 300px.
+20b) ¿Qué valor de flex permite ese crecimiento?
+El primer valor de flex: 1 1 300px.
 
-   20c) ¿Resulta visualmente conveniente que ocupe todo el espacio?
-   No ya que la tarjeta queda distinta a las demás, lo que rompe el orden y la estética. 
+20c) ¿Resulta visualmente conveniente que ocupe todo el espacio?
+No ya que la tarjeta queda distinta a las demás, lo que rompe el orden y la estética. 
+   
+Propiedad para centrar los elementos de una fila incompleta: justify-content: center.
 
-   22) Por qué ahora se respetan las esquinas redondeadas:
-   overflow: hidden recorta todo lo que se salga de la caja de la tarjeta y como la caja tiene border-radius, el recorte tiene forma
-   redondeada y la fotografía ya no cubre las esquinas superiores. */
+22) Por qué ahora se respetan las esquinas redondeadas:
+overflow: hidden recorta todo lo que se salga de la caja de la tarjeta y como la caja tiene border-radius, el recorte tiene forma
+redondeada y la fotografía ya no cubre las esquinas superiores. */
 
 .maravilla img {
   display: block;
@@ -216,15 +218,15 @@ justify-content: center;
 }
 
 /* 23a) ¿Mantienen su proporción?
-   No porque al fijar el ancho y la altura, cada imagen se estira o se aplasta para llenar el espacio y se deforma.
+No porque al fijar el ancho y la altura, cada imagen se estira o se aplasta para llenar el espacio y se deforma.
 
-   23b) ¿Qué diferencia se observa entre la fotografía vertical y las horizontales?
-   Petra (vertical) es la que más se deforma: se aplasta de arriba abajo y se ensancha, porque pasa a un recuadro horizontal.
-   Las fotografías horizontales se deforman mucho menos porque su forma original se parece más. 
+23b) ¿Qué diferencia se observa entre la fotografía vertical y las horizontales?
+Petra (vertical) es la que más se deforma: se aplasta de arriba abajo y se ensancha, porque pasa a un recuadro horizontal.
+Las fotografías horizontales se deforman mucho menos porque su forma original se parece más. 
 
-   24) Con contain la fotografía completa cabe en el área, pero pueden aparecer espacios libres a los lados o arriba y abajo.
-   - Qué parte del contenido puede perderse con cover:
-   La imagen conserva su proporción y llena toda el área, pero se recorta lo que sobra.*/
+24) Con contain la fotografía completa cabe en el área, pero pueden aparecer espacios libres a los lados o arriba y abajo.
+- Qué parte del contenido puede perderse con cover:
+La imagen conserva su proporción y llena toda el área, pero se recorta lo que sobra.*/
 
 .maravilla-contenido {
   padding: 1.25rem;
@@ -251,55 +253,54 @@ justify-content: center;
   margin-top: auto;
 }
 
-/* 26) Qué espacio absorbe el margen automático:
-   .maravilla-contenido, entre la descripción y el enlace. Así el enlace se empuja hasta el final de la tarjeta y todos los enlaces de una
-   misma fila quedan a la misma altura. */
+/* 26) Qué espacio absorbe el margen automático: 
+Absorbe todo el espacio vertical libre que queda dentro de .maravilla-contenido, entre la descripción y el enlace.
+Así el enlace se empuja hasta el final de la tarjeta y todos los enlaces de una misma fila quedan a la misma altura. */
 
 /* 27a) ¿En qué dirección se desplazó la tarjeta?
-   A la derecha (50px) y hacia abajo (30px).
+A la derecha (50px) y hacia abajo (30px).
 
-   27b) ¿Desde qué posición se calcula el desplazamiento?
-   Desde su posición original en el flujo normal.
+27b) ¿Desde qué posición se calcula el desplazamiento?
+Desde su posición original en el flujo normal.
 
-   27c) ¿Las demás tarjetas ocuparon su posición original?
-   Sí, porque la tarjeta desplazada conserva el espacio que ocupaba.
+27c) ¿Las demás tarjetas ocuparon su posición original?
+Sí, porque la tarjeta desplazada conserva el espacio que ocupaba.
 
-   27d) ¿La tarjeta desplazada puede superponerse con otras?
-   Sí, al moverse puede quedar sobre otras tarjetas.
+27d) ¿La tarjeta desplazada puede superponerse con otras?
+Sí, al moverse puede quedar sobre otras tarjetas.
    
-   (Al cambiar temporalmente left: 50px por right: 50px)
-   28a) ¿La tarjeta se desplaza hacia la derecha o hacia la izquierda?
-   Hacia la izquierda.
+(Al cambiar temporalmente left: 50px por right: 50px)
+28a) ¿La tarjeta se desplaza hacia la derecha o hacia la izquierda?
+Hacia la izquierda.
 
-   28b) ¿Por qué una coordenada situada en un lado puede producir movimiento en la dirección contraria?
-   Porque la coordenada indica desde qué lado se separa el elemento de su posición original.
+28b) ¿Por qué una coordenada situada en un lado puede producir movimiento en la dirección contraria?
+Porque la coordenada indica desde qué lado se separa el elemento de su posición original.
 
-   29a) ¿Qué ocurrió con las demás tarjetas?
-   Se reacomodaron y ocuparon el lugar que dejó la segunda tarjeta, como si esta ya no existiera.
+29a) ¿Qué ocurrió con las demás tarjetas?
+Se reacomodaron y ocuparon el lugar que dejó la segunda tarjeta, como si esta ya no existiera.
 
-   29b) ¿Continúa reservado el espacio original de Petra?
-   No, porque al salir del flujo normal, su espacio ya no se reserva.
+29b) ¿Continúa reservado el espacio original de Petra?
+No, porque al salir del flujo normal, su espacio ya no se reserva.
 
-   29c) ¿Respecto de qué área parecen calcularse top y left?
-   Respecto del área inicial del documento. 
+29c) ¿Respecto de qué área parecen calcularse top y left?
+Respecto del área inicial del documento. 
 
+(Al agregar temporalmente a .maravillas position: relative)
+30a) ¿Desde dónde se calculan ahora top y left?
+Desde la esquina superior izquierda de .maravillas.
 
-   (Al agregar temporalmente a .maravillas position: relative)
-   30a) ¿Desde dónde se calculan ahora top y left?
-   Desde la esquina superior izquierda de .maravillas.
+30b) ¿Por qué se modificó la referencia si el contenedor no fue desplazado?
+Porque position: relative convierte a .maravillas en un elemento posicionado aunque no tenga coordenadas, y un elemento absoluto toma 
+como referencia a su antecesor posicionado más cercano. 
 
-   30b) ¿Por qué se modificó la referencia si el contenedor no fue desplazado?
-   Porque position: relative convierte a .maravillas en un elemento posicionado aunque no tenga coordenadas, y un elemento absoluto toma 
-   como referencia a su antecesor posicionado más cercano. 
+31a) ¿Cuál de los dos tipos de posicionamiento conserva el espacio original del elemento?
+El posicionamiento relativo.
 
-   31a) ¿Cuál de los dos tipos de posicionamiento conserva el espacio original del elemento?
-   El posicionamiento relativo.
+31b) ¿Cuál permite que las demás cajas ocupen ese espacio?
+El posicionamiento absoluto, porque saca al elemento del flujo normal.
 
-   31b) ¿Cuál permite que las demás cajas ocupen ese espacio?
-   El posicionamiento absoluto, porque saca al elemento del flujo normal.
-
-   31c) ¿Cómo se determina el sistema de referencia de un elemento absoluto?
-   Es su antecesor posicionado más cercano. Si no existe ninguno, se usa el área inicial del documento. */
+31c) ¿Cómo se determina el sistema de referencia de un elemento absoluto?
+Es su antecesor posicionado más cercano. Si no existe ninguno, se usa el área inicial del documento. */
    
 .maravilla-imagen {
   position: relative;
@@ -319,14 +320,14 @@ justify-content: center;
 }
 
 /* 35a) ¿Permanece adherido el encabezado?
-   No, ya que se desplaza con la página como cualquier otro elemento.
+No, ya que se desplaza con la página como cualquier otro elemento.
 
-   35b) ¿Qué información falta para indicar el punto de adhesión?
-   Falta una coordenada que indique a qué distancia del borde debe quedar adherido. 
+35b) ¿Qué información falta para indicar el punto de adhesión?
+Falta una coordenada que indique a qué distancia del borde debe quedar adherido. 
 
-   37) Por qué el encabezado necesita un valor superior al de las etiquetas:
-   Las etiquetas (.continente) tienen z-index: 1. Entonces para que el encabezado se dibuje por encima de ellas al desplazarse, necesita un z-index
-   mayor, en este caso 10. */
+37) Por qué el encabezado necesita un valor superior al de las etiquetas:
+Las etiquetas (.continente) tienen z-index: 1. Entonces para que el encabezado se dibuje por encima de ellas al desplazarse, necesita un z-index
+mayor, en este caso 10. */
 
 .volver-arriba {
   position: fixed;
@@ -348,10 +349,10 @@ justify-content: center;
 }
 
 /* 38a) ¿Cuál conserva su espacio original?
-   El encabezado sigue ocupando su lugar en el flujo, mientras el botón fijo sale del flujo y no conserva espacio.
+El encabezado sigue ocupando su lugar en el flujo, mientras el botón fijo sale del flujo y no conserva espacio.
 
-   38b) ¿Cuál permanece ubicado respecto de la ventana desde el inicio?
-   El botón .volver-arriba, que se posiciona respecto de la ventana desde el principio. */
+38b) ¿Cuál permanece ubicado respecto de la ventana desde el inicio?
+El botón .volver-arriba, que se posiciona respecto de la ventana desde el principio. */
 
 .seccion-historia {
   padding: 3rem 0;
