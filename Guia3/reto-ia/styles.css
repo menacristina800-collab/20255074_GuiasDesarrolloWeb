@@ -1,0 +1,1619 @@
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+    --black: #0a0a0a;
+    --black-soft: #111214;
+    --gray-dark: #232426;
+    --gray-border: #45464d;
+    --gray-text: #a6a8ad;
+
+    --white: #ffffff;
+
+    --blue: #1253ff;
+    --blue-light: #528fff;
+
+    --font-display: "Bebas Neue", sans-serif;
+    --font-body: "Inter", sans-serif;
+
+    --transition: 0.25s ease;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   ESTRUCTURA PRINCIPAL — CSS GRID
+========================================================= */
+
+.site-grid {
+
+    /*
+        GRID PRINCIPAL:
+        Cada área de la página ocupa una zona específica.
+    */
+    display: grid;
+
+    /*
+        Define las columnas principales del sitio.
+        1fr permite que el contenido se adapte al ancho disponible.
+    */
+    grid-template-columns: minmax(0, 1fr);
+
+    /*
+        Define las áreas principales:
+        promo → barra superior
+        header → navegación
+        main → contenido
+        footer → pie de página
+    */
+    grid-template-areas:
+        "promo"
+        "header"
+        "main"
+        "footer";
+
+    /*
+        Separación entre las áreas principales.
+        Se mantiene en 0 porque las secciones forman
+        visualmente una sola composición.
+    */
+    gap: 0;
+
+    min-height: 100vh;
+}
+
+.promo-bar {
+    grid-area: promo;
+}
+
+.main-header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+}
+
+.site-footer {
+    grid-area: footer;
+}
+
+
+/* =========================================================
+   BARRA PROMOCIONAL
+========================================================= */
+
+.promo-bar {
+    min-height: 38px;
+
+    background: var(--blue);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 30px;
+}
+
+.promo-bar p {
+    color: var(--white);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+
+    text-align: center;
+}
+
+.promo-bar span {
+    margin: 0 10px;
+    opacity: 0.65;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    min-height: 82px;
+
+    background: rgba(10, 10, 10, 0.96);
+
+    border-bottom: 1px solid var(--blue);
+
+    padding: 0 6vw;
+
+    /*
+        GRID PARA HEADER:
+        Una columna para logo y otra para navegación.
+    */
+    display: grid;
+
+    /*
+        El logo ocupa la primera columna.
+        La navegación ocupa la segunda.
+    */
+    grid-template-columns: 1fr auto;
+
+    /*
+        Centra verticalmente los elementos del header.
+    */
+    align-items: center;
+
+    /*
+        Separación entre logo y navegación.
+    */
+    gap: 40px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    font-family: var(--font-display);
+
+    font-size: 38px;
+
+    letter-spacing: 0.04em;
+
+    line-height: 1;
+
+    display: inline-block;
+
+    width: fit-content;
+}
+
+.logo span {
+    color: var(--white);
+}
+
+.logo strong {
+    color: var(--blue);
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   NAVEGACIÓN
+========================================================= */
+
+.main-nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 34px;
+}
+
+.main-nav > a:not(.account-button) {
+    position: relative;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+
+    color: var(--gray-text);
+
+    padding: 31px 0;
+
+    transition: color var(--transition);
+}
+
+.main-nav > a:not(.account-button)::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 23px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--blue);
+
+    transition: width var(--transition);
+}
+
+.main-nav > a:not(.account-button):hover,
+.main-nav > a.active {
+    color: var(--white);
+}
+
+.main-nav > a:not(.account-button):hover::after,
+.main-nav > a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   BOTÓN MI CUENTA
+========================================================= */
+
+.account-button {
+    border: 1px solid var(--blue);
+
+    padding: 11px 19px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.13em;
+
+    color: var(--white);
+
+    transition:
+        background var(--transition),
+        box-shadow var(--transition);
+}
+
+.account-button:hover {
+    background: var(--blue);
+
+    box-shadow: 0 0 20px rgba(18, 83, 255, 0.35);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 690px;
+
+    overflow: hidden;
+
+    /*
+        GRID DEL HERO:
+        Se divide en columnas para controlar
+        la posición del contenido.
+    */
+    display: grid;
+
+    /*
+        El contenido ocupa aproximadamente la mitad
+        del hero y el resto queda libre para el efecto visual.
+    */
+    grid-template-columns: minmax(0, 1.25fr) minmax(200px, 0.75fr);
+
+    /*
+        Alineación vertical del contenido.
+    */
+    align-items: center;
+
+    /*
+        Separación entre las columnas.
+    */
+    gap: 40px;
+
+    padding: 100px 8vw 140px;
+
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(18, 83, 255, 0.2),
+            transparent 35%
+        ),
+        var(--black);
+}
+
+
+/* Luz azul adicional */
+
+.hero-light {
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    right: -160px;
+    top: 30px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(18, 83, 255, 0.19) 0%,
+            rgba(18, 83, 255, 0.06) 35%,
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* Corte diagonal inferior */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -1px;
+    left: 0;
+
+    width: 100%;
+    height: 90px;
+
+    background: var(--black);
+
+    clip-path: polygon(
+        0 65%,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   CONTENIDO HERO
+========================================================= */
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+
+    max-width: 850px;
+}
+
+.eyebrow,
+.section-label {
+    color: var(--blue-light);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.24em;
+
+    text-transform: uppercase;
+}
+
+.eyebrow {
+    border-left: 4px solid var(--blue);
+
+    padding-left: 14px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    max-width: 900px;
+
+    font-family: var(--font-display);
+
+    font-size: clamp(70px, 9vw, 145px);
+
+    line-height: 0.83;
+
+    font-weight: 400;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.015em;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: var(--blue);
+
+    text-shadow:
+        0 0 35px rgba(18, 83, 255, 0.16);
+}
+
+.hero-description {
+    max-width: 570px;
+
+    color: var(--gray-text);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    margin-top: 34px;
+}
+
+
+/* =========================================================
+   BOTÓN PRINCIPAL
+========================================================= */
+
+.primary-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 38px;
+
+    padding: 16px 23px;
+
+    background: var(--blue);
+
+    border: 1px solid var(--blue);
+
+    color: var(--white);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.13em;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+}
+
+.primary-button span {
+    font-size: 20px;
+
+    line-height: 0;
+
+    transition: transform var(--transition);
+}
+
+.primary-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 35px rgba(18, 83, 255, 0.38);
+}
+
+.primary-button:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   ECUALIZADOR
+========================================================= */
+
+.equalizer {
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 5px;
+}
+
+.hero-equalizer {
+    position: absolute;
+
+    right: 13%;
+    bottom: 25%;
+
+    width: 220px;
+    height: 170px;
+
+    z-index: 1;
+
+    opacity: 0.6;
+}
+
+.equalizer span {
+    display: block;
+
+    width: 7px;
+
+    background: var(--blue);
+
+    box-shadow:
+        0 0 14px rgba(18, 83, 255, 0.3);
+
+    animation: equalizerPulse 2.2s ease-in-out infinite alternate;
+}
+
+.equalizer span:nth-child(1) {
+    height: 45%;
+}
+
+.equalizer span:nth-child(2) {
+    height: 72%;
+    animation-delay: 0.2s;
+}
+
+.equalizer span:nth-child(3) {
+    height: 34%;
+    animation-delay: 0.4s;
+}
+
+.equalizer span:nth-child(4) {
+    height: 88%;
+    animation-delay: 0.1s;
+}
+
+.equalizer span:nth-child(5) {
+    height: 57%;
+    animation-delay: 0.3s;
+}
+
+.equalizer span:nth-child(6) {
+    height: 95%;
+    animation-delay: 0.5s;
+}
+
+.equalizer span:nth-child(7) {
+    height: 43%;
+    animation-delay: 0.15s;
+}
+
+.equalizer span:nth-child(8) {
+    height: 77%;
+    animation-delay: 0.35s;
+}
+
+.equalizer span:nth-child(9) {
+    height: 53%;
+    animation-delay: 0.25s;
+}
+
+.equalizer span:nth-child(10) {
+    height: 90%;
+    animation-delay: 0.45s;
+}
+
+.equalizer span:nth-child(11) {
+    height: 38%;
+    animation-delay: 0.1s;
+}
+
+.equalizer span:nth-child(12) {
+    height: 65%;
+    animation-delay: 0.3s;
+}
+
+@keyframes equalizerPulse {
+    from {
+        transform: scaleY(0.75);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+
+/* =========================================================
+   TEXTO LATERAL DEL HERO
+========================================================= */
+
+.hero-side-text {
+    position: absolute;
+
+    right: 3%;
+
+    top: 50%;
+
+    transform: rotate(90deg);
+
+    display: flex;
+
+    gap: 20px;
+
+    color: var(--gray-text);
+
+    font-size: 9px;
+
+    letter-spacing: 0.25em;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   CATEGORÍAS
+========================================================= */
+
+.categories-section {
+    padding: 120px 8vw;
+
+    background: var(--black);
+}
+
+.section-heading {
+    margin-bottom: 55px;
+}
+
+.section-heading h2,
+.brands-intro h2 {
+    position: relative;
+
+    margin-top: 15px;
+
+    padding-left: 18px;
+
+    font-family: var(--font-display);
+
+    font-size: clamp(55px, 7vw, 95px);
+
+    font-weight: 400;
+
+    line-height: 0.9;
+
+    text-transform: uppercase;
+
+    border-left: 5px solid var(--blue);
+}
+
+.section-heading h2 span,
+.brands-intro h2 span {
+    color: var(--blue);
+}
+
+
+/* =========================================================
+   MOSAICO DE CATEGORÍAS — CSS GRID
+========================================================= */
+
+.categories-grid {
+
+    /*
+        GRID DEL MOSAICO:
+        Cuatro columnas iguales permiten crear
+        tarjetas de diferentes tamaños.
+    */
+    display: grid;
+
+    /*
+        Define cuatro columnas flexibles.
+        Todas tienen como mínimo 0 para evitar overflow.
+    */
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    /*
+        Dos filas para crear el efecto de mosaico.
+    */
+    grid-template-rows:
+        repeat(2, minmax(250px, auto));
+
+    /*
+        Separación uniforme entre las tarjetas.
+    */
+    gap: 12px;
+}
+
+
+/* Tarjeta principal */
+
+.category-large {
+
+    /*
+        La primera tarjeta ocupa dos columnas.
+    */
+    grid-column: span 2;
+
+    /*
+        Y también ocupa las dos filas.
+    */
+    grid-row: span 2;
+}
+
+
+/* Tarjeta ancha */
+
+.category-wide {
+
+    /*
+        La categoría 04 ocupa las dos columnas restantes
+        en la segunda fila.
+    */
+    grid-column: span 2;
+}
+
+
+.category-card {
+    position: relative;
+
+    min-height: 300px;
+
+    overflow: hidden;
+
+    padding: 30px;
+
+    background: var(--black-soft);
+
+    border: 1px solid var(--gray-border);
+
+    transition:
+        border-color var(--transition),
+        transform var(--transition),
+        background var(--transition);
+
+    animation: sectionEntry 0.7s ease both;
+}
+
+.category-card:hover {
+    border-color: var(--blue);
+
+    background: #0d0f13;
+
+    transform: translateY(-3px);
+}
+
+.category-number {
+    position: absolute;
+
+    top: -20px;
+    right: 20px;
+
+    font-family: var(--font-display);
+
+    font-size: 150px;
+
+    line-height: 1;
+
+    color: rgba(18, 83, 255, 0.09);
+
+    transition:
+        color var(--transition),
+        transform var(--transition);
+}
+
+.category-card:hover .category-number {
+    color: rgba(18, 83, 255, 0.23);
+
+    transform: translateY(-5px);
+}
+
+.category-content {
+    position: relative;
+
+    z-index: 2;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+}
+
+.category-type {
+    margin-bottom: 12px;
+
+    color: var(--blue-light);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.22em;
+}
+
+.category-card h3 {
+    font-family: var(--font-display);
+
+    font-size: clamp(42px, 4vw, 62px);
+
+    line-height: 0.9;
+
+    font-weight: 400;
+
+    text-transform: uppercase;
+}
+
+.category-card p:not(.category-type) {
+    max-width: 450px;
+
+    margin-top: 20px;
+
+    color: var(--gray-text);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+.explore-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    width: fit-content;
+
+    margin-top: 25px;
+
+    color: var(--white);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.14em;
+}
+
+.explore-link span {
+    color: var(--blue);
+
+    font-size: 18px;
+
+    transition: transform var(--transition);
+}
+
+.explore-link:hover span {
+    transform: translateX(6px);
+}
+
+
+/* =========================================================
+   MARCAS
+========================================================= */
+
+.brands-section {
+    padding: 110px 8vw 130px;
+
+    background: var(--black-soft);
+
+    /*
+        GRID PARA LA SECCIÓN DE MARCAS:
+        Una columna para el título y otra para las marcas.
+    */
+    display: grid;
+
+    /*
+        Primera columna para información,
+        segunda para la lista de marcas.
+    */
+    grid-template-columns:
+        minmax(250px, 0.75fr)
+        minmax(0, 1.25fr);
+
+    /*
+        Espacio entre ambas zonas.
+    */
+    gap: 80px;
+
+    /*
+        Alinea ambos bloques verticalmente.
+    */
+    align-items: center;
+}
+
+.brands-intro h2 {
+    font-size: clamp(48px, 5vw, 75px);
+}
+
+
+/* GRID DE MARCAS */
+
+.brands-grid {
+
+    /*
+        GRID DE MARCAS:
+        Tres columnas permiten crear una lista limpia.
+    */
+    display: grid;
+
+    /*
+        Divide las marcas en tres columnas.
+    */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    /*
+        Espacio vertical y horizontal.
+    */
+    gap: 0;
+}
+
+.brand {
+    min-height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 20px 25px;
+
+    border-bottom: 1px solid var(--gray-border);
+
+    color: var(--white);
+
+    font-family: var(--font-display);
+
+    font-size: 31px;
+
+    letter-spacing: 0.08em;
+
+    transition:
+        color var(--transition),
+        padding var(--transition);
+}
+
+.brand:nth-child(-n + 3) {
+    border-top: 1px solid var(--gray-border);
+}
+
+.brand:not(:nth-child(3n + 1)) {
+    border-left: 1px solid var(--gray-border);
+}
+
+.brand:hover {
+    color: var(--blue);
+
+    padding-left: 32px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    background: var(--black);
+
+    border-top: 2px solid var(--blue);
+
+    padding: 80px 8vw 25px;
+}
+
+
+/* =========================================================
+   GRID DEL FOOTER
+========================================================= */
+
+.footer-grid {
+
+    /*
+        GRID DEL FOOTER:
+        Cuatro columnas independientes.
+    */
+    display: grid;
+
+    /*
+        Las columnas tienen proporciones diferentes:
+        la primera es más ancha para la información de marca.
+    */
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr
+        1.2fr;
+
+    /*
+        Espacio entre las columnas.
+    */
+    gap: 50px;
+
+    /*
+        Alinea todas las columnas desde arriba.
+    */
+    align-items: start;
+
+    padding-bottom: 65px;
+}
+
+.footer-logo {
+    font-size: 45px;
+}
+
+.footer-brand > p {
+    max-width: 330px;
+
+    margin-top: 25px;
+
+    color: var(--gray-text);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOOTER ECUALIZADOR
+========================================================= */
+
+.footer-equalizer {
+    width: 120px;
+
+    height: 50px;
+
+    margin-top: 30px;
+
+    gap: 4px;
+}
+
+.footer-equalizer span {
+    width: 4px;
+
+    height: 60%;
+}
+
+.footer-equalizer span:nth-child(2) {
+    height: 90%;
+}
+
+.footer-equalizer span:nth-child(3) {
+    height: 45%;
+}
+
+.footer-equalizer span:nth-child(4) {
+    height: 75%;
+}
+
+.footer-equalizer span:nth-child(5) {
+    height: 100%;
+}
+
+.footer-equalizer span:nth-child(6) {
+    height: 55%;
+}
+
+.footer-equalizer span:nth-child(7) {
+    height: 80%;
+}
+
+
+/* =========================================================
+   COLUMNAS DEL FOOTER
+========================================================= */
+
+.footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+.footer-column h3 {
+    margin-bottom: 13px;
+
+    color: var(--white);
+
+    font-family: var(--font-display);
+
+    font-size: 22px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.07em;
+
+    text-transform: uppercase;
+
+    border-left: 3px solid var(--blue);
+
+    padding-left: 10px;
+}
+
+.footer-column a,
+.footer-column p {
+    color: var(--gray-text);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+    transition: color var(--transition);
+}
+
+.footer-column a:hover {
+    color: var(--white);
+}
+
+.footer-column p {
+    margin-bottom: 3px;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid var(--gray-border);
+}
+
+.footer-bottom p,
+.footer-bottom span {
+    color: #66686d;
+
+    font-size: 9px;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   ANIMACIONES DE ENTRADA
+========================================================= */
+
+@keyframes sectionEntry {
+    from {
+        opacity: 0;
+
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    animation: sectionEntry 0.7s ease both;
+}
+
+.categories-section,
+.brands-section,
+.site-footer {
+    animation: sectionEntry 0.8s ease both;
+}
+
+
+/* =========================================================
+   TABLETS
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .main-header {
+        padding: 0 4vw;
+
+        /*
+            Se mantiene Grid, pero reduce el espacio
+            entre las columnas.
+        */
+        grid-template-columns: auto 1fr;
+
+        gap: 25px;
+    }
+
+    .main-nav {
+        justify-content: flex-end;
+
+        gap: 18px;
+    }
+
+    .main-nav > a:not(.account-button) {
+        font-size: 9px;
+    }
+
+    .hero {
+        padding-left: 6vw;
+        padding-right: 6vw;
+
+        /*
+            El hero pasa a una sola columna.
+        */
+        grid-template-columns: 1fr;
+
+        min-height: 620px;
+    }
+
+    .hero-equalizer {
+        right: 8%;
+        opacity: 0.35;
+    }
+
+    .categories-section,
+    .brands-section,
+    .site-footer {
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+
+    .categories-grid {
+
+        /*
+            En tablet se utilizan dos columnas.
+        */
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        grid-template-rows: auto;
+    }
+
+    .category-large {
+        /*
+            La primera tarjeta sigue siendo dominante.
+        */
+        grid-column: span 2;
+
+        grid-row: span 1;
+    }
+
+    .category-wide {
+        grid-column: span 2;
+    }
+
+    .brands-section {
+        /*
+            Se apilan las dos áreas de la sección.
+        */
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        /*
+            El footer se convierte en una cuadrícula
+            de dos columnas.
+        */
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   MÓVILES
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .promo-bar {
+        min-height: 48px;
+
+        padding: 8px 15px;
+    }
+
+    .promo-bar p {
+        font-size: 8px;
+
+        line-height: 1.6;
+    }
+
+    .promo-bar span {
+        margin: 0 4px;
+    }
+
+
+    /* HEADER MÓVIL */
+
+    .main-header {
+        position: relative;
+
+        /*
+            Dos filas:
+            logo arriba y navegación abajo.
+        */
+        grid-template-columns: 1fr;
+
+        grid-template-rows: auto auto;
+
+        gap: 15px;
+
+        padding: 20px 6vw;
+    }
+
+    .logo {
+        font-size: 34px;
+    }
+
+    .main-nav {
+        /*
+            La navegación sigue utilizando Flexbox
+            porque es un componente pequeño.
+        */
+        justify-content: flex-start;
+
+        flex-wrap: wrap;
+
+        gap: 14px 20px;
+    }
+
+    .main-nav > a:not(.account-button) {
+        padding: 5px 0;
+
+        font-size: 8px;
+    }
+
+    .main-nav > a:not(.account-button)::after {
+        bottom: 0;
+    }
+
+    .account-button {
+        padding: 9px 13px;
+
+        font-size: 8px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 600px;
+
+        padding: 80px 6vw 110px;
+
+        /*
+            Una sola columna en móvil.
+        */
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: clamp(62px, 18vw, 105px);
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .hero-equalizer {
+        right: 5%;
+        bottom: 22%;
+
+        width: 140px;
+        height: 110px;
+    }
+
+    .hero-side-text {
+        display: none;
+    }
+
+
+    /* CATEGORÍAS */
+
+    .categories-section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2,
+    .brands-intro h2 {
+        font-size: 55px;
+    }
+
+    .categories-grid {
+
+        /*
+            Una sola columna en móviles.
+        */
+        grid-template-columns: 1fr;
+
+        /*
+            Una fila automática por tarjeta.
+        */
+        grid-template-rows: auto;
+
+        gap: 10px;
+    }
+
+    .category-large,
+    .category-wide {
+        /*
+            Las tarjetas vuelven a ocupar
+            solamente una columna.
+        */
+        grid-column: span 1;
+
+        grid-row: span 1;
+    }
+
+    .category-card {
+        min-height: 330px;
+
+        padding: 25px;
+    }
+
+    .category-card h3 {
+        font-size: 49px;
+    }
+
+    .category-number {
+        font-size: 120px;
+    }
+
+
+    /* MARCAS */
+
+    .brands-section {
+        padding-top: 75px;
+        padding-bottom: 85px;
+
+        /*
+            Una sola columna para intro y marcas.
+        */
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .brands-grid {
+
+        /*
+            Dos columnas para las marcas en móvil.
+        */
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .brand {
+        min-height: 75px;
+
+        font-size: 23px;
+
+        padding: 15px;
+    }
+
+    .brand:nth-child(-n + 3) {
+        border-top: none;
+    }
+
+    .brand:nth-child(-n + 2) {
+        border-top: 1px solid var(--gray-border);
+    }
+
+    .brand:not(:nth-child(3n + 1)) {
+        border-left: none;
+    }
+
+    .brand:nth-child(even) {
+        border-left: 1px solid var(--gray-border);
+    }
+
+
+    /* FOOTER */
+
+    .site-footer {
+        padding-top: 60px;
+    }
+
+    .footer-grid {
+
+        /*
+            Una sola columna en móviles.
+        */
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+}
+
+
+/* =========================================================
+   PANTALLAS MUY PEQUEÑAS
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .promo-bar p {
+        font-size: 7px;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    .main-nav {
+        gap: 12px;
+    }
+
+    .main-nav > a:not(.account-button) {
+        font-size: 7px;
+    }
+
+    .hero {
+        min-height: 560px;
+    }
+
+    .hero h1 {
+        font-size: 64px;
+    }
+
+    .hero-equalizer {
+        opacity: 0.2;
+    }
+
+    .category-card {
+        min-height: 300px;
+    }
+
+    .category-card h3 {
+        font-size: 43px;
+    }
+
+    .brands-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .brand {
+        border-left: none !important;
+    }
+
+    .brand:nth-child(2) {
+        border-top: none;
+    }
+}
+
+
+/* =========================================================
+   REDUCCIÓN DE MOVIMIENTO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}
